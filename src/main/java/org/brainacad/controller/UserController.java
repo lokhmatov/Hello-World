@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.List;
 
 @RestController // Помечаем класс как контроллер обрабатывающий REST запросы
+@RequestMapping("api")
 public class UserController {
 
 	// Иньектируем сервис для работы с пользователями
@@ -36,12 +37,5 @@ public class UserController {
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
-	@PostMapping(value = "/user/add/{param}")
-	public ResponseEntity<?> testAdd(@RequestBody User data,
-									 @PathVariable String param,
-									 @RequestParam(defaultValue = "") final String search) {
-		// ...
-		return new ResponseEntity<>(HttpStatus.OK);
-	}
 }
 
